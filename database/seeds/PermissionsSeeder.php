@@ -38,19 +38,22 @@ class PermissionsSeeder extends Seeder
         // create demo users
         $user = Factory(App\User::class)->create([
             'name' => 'Example User',
-            'email' => 'test@example.com',
+            'email' => 'writer@example.com',
+            'password' => Hash::make('!@#password'),
         ]);
         $user->assignRole($role1);
 
         $user = Factory(App\User::class)->create([
             'name' => 'Example Admin User',
             'email' => 'admin@example.com',
+            'password' => Hash::make('!@#password'),
         ]);
         $user->assignRole($role2);
 
         $user = Factory(App\User::class)->create([
             'name' => 'Example Super-Admin User',
             'email' => 'superadmin@example.com',
+            'password' => Hash::make('!@#password'),
         ]);
         $user->assignRole($role3);
     }
