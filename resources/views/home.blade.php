@@ -15,6 +15,24 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <br>
+
+                    @can('edit articles')
+                        can edit arts <br>
+                    @endcan
+
+                    @hasanyrole('writer|admin')
+                        I am either a writer or an admin or both! <br>
+                    @else
+                        I am not writer or admin <br>
+                    @endhasanyrole
+
+                    @role(('super-admin'))
+                        I am super-admin! <br>
+                    @else
+                        I am not super-admin <br>
+                    @endrole
                 </div>
             </div>
         </div>
