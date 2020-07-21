@@ -17,5 +17,12 @@ class UserSeeder extends Seeder
             'email' => 'admin@admin.local',
             'password' => Hash::make('!@#password'),
         ]);
+
+        App\User::create([
+            'name' => 'User',
+            // 'role' => 'admin',
+            'email' => 'user@user.local',
+            'password' => Hash::make('!@#password'),
+        ]);
     }
 }
